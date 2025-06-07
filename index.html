@@ -5,78 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validación de un formulario</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
     <div id="registro">
 
         
         
         <form id="formulario" novalidate>
-            <h2>Formulario</h2>
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" minlength="3" required autocomplete="off">
-            <div class="error" id="errorNombre"></div>
+            <h2>Crea una cuenta</h2>
+            <div class="campo">
+                <input type="text" placeholder="Nombre" required id="nombre" name="nombre" minlength="3" required autocomplete="off">
+                <div class="error" id="errorNombre"></div>
+            </div>
             <br>
 
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido" minlength="3" required autocomplete="off">
-            <div class="error" id="errorApellido"></div>
+            <div class="campo">
+                <input type="text" placeholder="Apellido" required id="apellido" name="apellido" minlength="3" required autocomplete="off">
+                <div class="error" id="errorApellido"></div>
+            </div>
             <br>
 
-            <label for="documento">Documento:</label>
-            <input type="text" id="documento" name="documento" minlength="3" required autocomplete="off">
-            <div class="error" id="errorDocumento"></div>
+            <div class="campo">
+                <input type="text" placeholder="Documento" required id="documento" name="documento" minlength="3" required autocomplete="off">
+                <div class="error" id="errorDocumento"></div>
+            </div>
             <br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required autocomplete="off">
-            <div class="error" id="errorEmail"></div>
+            <div class="campo">
+                <input type="email" placeholder="Email" required id="email" name="email" minlength="3" required autocomplete="off">
+                <div class="error" id="errorEmail"></div>
+            </div>
             <br>
 
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad" required>
-            <div class="error" id="errorEdad"></div>
+            <div class="campo">
+                <input type="number" placeholder="Edad" id="edad" name="edad" required>
+                <div class="error" id="errorEdad"></div>
+            </div>
             <br>
 
-            <label for="actividad">Actividad:</label>
-            <select name="actividad" id="actividad" required>
-                <option value="">Seleccione...</option>
-                <option value="tecnología">Tecnología</option>
-                <option value="programación">Programación</option>
-                <option value="inteligenciaArtificial">Inteligencia Artificial</option>
-                <option value="automatización">Automatización</option>
-                <option value="sistemas">Sistemas</option>
-                <option value="educación">Educación</option>
-            </select>
-            <div class="error" id="errorActividad"></div>
+            <div class="campo">
+                <select name="trabajo" id="trabajo" required>
+                    <option value="" disabled selected hidden>Trabajo:</option>
+                    <option value="tecnología">Tecnología</option>
+                    <option value="programación">Programación</option>
+                    <option value="inteligenciaArtificial">Inteligencia Artificial</option>
+                    <option value="automatización">Automatización</option>
+                    <option value="sistemas">Sistemas</option>
+                    <option value="educación">Educación</option>
+                </select>
+                <div class="error" id="errorTrabajo"></div>
+            </div>
             <br>
 
-            <label for="nivelEstudio">Nivel de estudio:</label>
-            <select name="nivelEstudio" id="nivelEstudio" required>
-                <option value="">Seleccione...</option>
-                <option value="secundaria">Secundaria</option>
-                <option value="terciario">terciario</option>
-                <option value="universitario">Universitario</option>
-                <option value="universitarioIncompleto">Universitario Incompleto</option>
-                <option value="Posgrado">Posgrado</option>
+            <div class="campo">
+                <select name="nivelEstudio" id="nivelEstudio" required>
+                    <option value="" disabled selected hidden>Nivel de estudio:</option>
+                    <option value="secundaria">Secundaria</option>
+                    <option value="terciario">Terciario</option>
+                    <option value="universitario">Universitario</option>
+                    <option value="universitarioIncompleto">Universitario Incompleto</option>
+                    <option value="Posgrado">Posgrado</option>
+                </select>
+                <div class="error" id="errorNivelEstudio"></div>
+            </div>
 
-            </select>
-            <div class="error" id="errorNivelEstudio"></div>
-
-            <label class="inline">
-                <input type="checkbox" name="aceptoTerminos" id="aceptoTerminos" required>
-                Acepto Términos y condiciones
-            </label>
-            <div class="error" id="errorTerminos"></div>
+            <div class="campo checkbox">
+                <label class="inline">
+                    <input type="checkbox" name="aceptoTerminos" id="aceptoTerminos" required>
+                    Acepto Términos y condiciones
+                </label>
+                <div class="error" id="errorTerminos"></div>
+            </div>
             <br>
 
-            <label class="inline">Publicidad</label>
-            <input type="checkbox" name="publicidad" id="publicidad" value="ofertas">
-            <label class="inline" for="ofertas">Ofertas</label>
-            <input type="checkbox" name="publicidad" id="novedades" value="novedades">
-            <label class="inline" for="novedades">Novedades</label>
-            <div class="error" id="errorPublicidad"></div>
+            <div class="campo checkbox">
+                <input type="checkbox" name="publicidad" id="publicidad" value="ofertas">
+                <label class="inline" for="publicidad">Publicidad</label>
+                <input type="checkbox" name="publicidad" id="novedades" value="novedades">
+                <label class="inline" for="novedades">Ofertas y novedades</label>
+            </div>
             <br>
 
             <input type="submit" value="REGISTRATE">

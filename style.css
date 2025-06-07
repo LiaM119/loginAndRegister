@@ -21,15 +21,6 @@ body{
     color: white;
 }
 
-label{
-    display: block;
-    margin-bottom: 1px;
-}
-
-label.inline{
-    display: inline-block;
-}
-
 input,select{
     padding: 4px;
     margin-bottom: 5px;
@@ -46,6 +37,16 @@ input[type="email"],
 input[type="number"],
 select{
     width: 100%;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid white;
+    color: rgb(255, 255, 255) !important;
+    outline: none;
+    padding: 8px 0;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
     
 }
 
@@ -66,7 +67,27 @@ input[type="submit"]:hover{
     background-color: rgb(151, 116, 1);
 }
 
-.error{
+.error {
     color: red;
     font-size: 10px;
+    min-height: 7px; 
+    display: block;
+    margin-top: 2px;
+}
+
+.campo {
+  margin-bottom: 6px;
+}
+
+.campo.checkbox {
+  margin-top: 0px;
+}
+
+select option {
+  background-color: rgba(44, 41, 38, 0.95); 
+  color: rgb(167, 167, 167)
+}
+
+::placeholder {
+  color: rgb(167, 167, 167);
 }
