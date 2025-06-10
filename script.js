@@ -220,4 +220,32 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    const btnRegister = document.getElementById("btnRegister");
+    const btnLogin = document.getElementById("btnLogin");
+
+    const registerPanel = document.getElementById("registerPanel");
+    const loginPanel = document.getElementById("loginPanel");
+
+    const registerFormm = document.querySelector(".container-register");
+    const loginFormm = document.querySelector(".container-login");
+
+    btnRegister.addEventListener("click", () => {
+    // Ocultar el panel de registro y mostrar el formulario de registro
+    registerPanel.style.display = "none";
+    registerFormm.style.display = "block";
+
+    // Mostrar el panel de login (por si estaba oculto) y ocultar formulario de login
+    loginPanel.style.display = "block";
+    loginFormm.style.display = "none";
+    });
+
+    btnLogin.addEventListener("click", () => {
+    // Ocultar el panel de login y mostrar el formulario de login
+    loginPanel.style.display = "none";
+    loginFormm.style.display = "block";
+
+    // Mostrar el panel de registro (por si estaba oculto) y ocultar formulario de registro
+    registerPanel.style.display = "block";
+    registerFormm.style.display = "none";
+    });
 });

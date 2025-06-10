@@ -1,4 +1,8 @@
 /* ------------ REGISTER & LOGIN ------------ */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url(assets/paisajefondo.jpg);
@@ -14,7 +18,7 @@ body {
 }
 
 form {
-  background-color: rgba(44, 41, 38, 0.7); /* FONDO UNIFICADO OSCURO */
+  background-color: rgba(44, 41, 38, 0.7);
   padding: 25px;
   border-radius: 15px;
   box-shadow: 2px 2px 20px black;
@@ -117,11 +121,25 @@ select option {
   gap: 400px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 50vh;
+}
+
 .container-register,
 .container-login {
   width: auto;
+  display: none;
+  position: relative;
 }
 
-.container-login{
-  margin-top: 170px;
+#loginPanel, #registerPanel{
+  background-color: rgba(0, 0, 0, 0);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  margin: 20px auto;
+  font-size: x-large;
 }
