@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ------------ REGISTRO ------------
+    // ------------ REGISTER ------------
 
     document.getElementById('registerButton').addEventListener('click', function() {
         if (validarFormulario()) {
@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // TEXT
     function validarFormulario() {
-    const camposTexto = document.querySelectorAll('input[type="text"], input[type="email"], input[type="number"], input[type="checkbox"] ');
+    const camposTexto = document.querySelectorAll('input[type="text"]');
     let validacionCorrecta = true;
 
     camposTexto.forEach(campo => {
@@ -26,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (campo.value.trim() === '') {
             mostrarError(errorCampo, '¡Este campo es requerido!');
             validacionCorrecta = false;
-        } else if (['nombre', 'apellido'] > 0 && campo.value.length < 3) {
+        } else if (['nombre', 'apellido'].includes(campo.id) && campo.value.length < 3){
             mostrarError(errorCampo, '¡Este campo debe tener al menos 3 caracteres!');
             validacionCorrecta = false;
         } else {
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const edad = document.getElementById('edad');
     const errorEdad = document.getElementById('errorEdad');
 
-    if (edad.value.trim() === '') {
+    if (edad.value.trim() == '') {
         mostrarError(errorEdad, '¡El campo de edad es obligatorio!');
         validacionCorrecta = false;
     } else if (isNaN(Number(edad.value.trim()))) {
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ocultarError(errorEdad);
     }
 
-    // TRABAJO
+    // WORK
     const actividad = document.getElementById('trabajo');
     const errorActividad = document.getElementById('errorTrabajo');
 
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ocultarError(errorActividad);
     }
 
-    // NIVEL DE ESTUDIO
+    // STUDY LEVEL
     const nivelEstudio = document.getElementById('nivelEstudio');
     const errorNivelEstudio = document.getElementById('errorNivelEstudio');
 
@@ -87,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ocultarError(errorNivelEstudio);
     }
 
-    // TERMINOS Y CONDICIONES
+    // CONDITIONS
     const aceptoTerminos = document.getElementById('aceptoTerminos');
     const errorAceptoTerminos = document.getElementById('errorTerminos');
 
@@ -101,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return validacionCorrecta;
     }
 
+    // HELPER FUNCTIONS 
     const mostrarError = (elemento, mensaje) => {
         elemento.textContent = mensaje;
         elemento.style.display = "block";
@@ -113,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ------------ LOGIN ------------
 
+    // LOGIN FORM SETUP
     const loginForm = document.getElementById('loginForm');
     const emailInput = document.getElementById('loginEmail');
     const passwordInput = document.getElementById('loginPassword');
@@ -121,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const passwordError = document.getElementById('passwordError');
     const confirmPasswordError = document.getElementById('confirmPasswordError');
 
+    // EVENT LISTENERS
     loginForm.addEventListener('submit', function(event) {
         event.preventDefault();
         validateForm();
@@ -142,6 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         clearError(confirmPasswordError);
     });
 
+    // VALIDATE FORM
     function validateForm() {
         const isValidEmail = validateEmail();
         const isValidPassword = validatePassword();
@@ -153,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // VALIDATE EMAIL
     function validateEmail() {
         const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
         const emailValue = emailInput.value.trim();
@@ -164,6 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
+    // VALIDATE PASSWORD 
     function validatePassword() {
         const passwordValue = passwordInput.value.trim();
 
@@ -174,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
+    // VALIDATE PASSWORD MATCH 
     function validatePasswordMatch() {
         const passwordValue = passwordInput.value.trim();
         const confirmPasswordValue = confirmPasswordInput.value.trim();
@@ -185,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return true;
     }
 
+    // ERROR DISPLAY UTILITIES 
     function showError(errorElement, message) {
         errorElement.innerHTML = message;
         errorElement.style.display = 'block';
@@ -195,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
         errorElement.style.display = 'none';
     }
 
+    // LOCAL STORAGE 
     function saveToLocalStorage() {
         const emailValue = emailInput.value.trim();
         localStorage.setItem('email', emailValue);
@@ -202,6 +212,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(body);
     }
 
+    // BODY JSON BUILDER
     function bodyBuilderJSON() {
         return {
             email: emailInput.value,

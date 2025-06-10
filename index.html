@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <!-------------------- REGISTRO -------------------->
+    <!-------------------- REGISTER-------------------->
     <div class="container" id="container">
         <div class="container-register">
             <form id="formulario" novalidate>
@@ -40,7 +40,7 @@
                 <br />
 
                 <div class="campo">
-                    <input type="number" placeholder="Edad" id="edad" name="edad" />
+                    <input type="number" placeholder="Edad" id="edad" name="edad" min="0"/>
                     <div class="error" id="errorEdad"></div>
                 </div>
                 <br />
@@ -83,12 +83,11 @@
                 <div class="campo checkbox">
                     <input type="checkbox" name="publicidad" id="publicidad" value="ofertas" />
                     <label class="inline" for="publicidad">Publicidad</label>
-                    <input type="checkbox" name="publicidad" id="novedades" value="novedades" />
+                    <input type="checkbox" name="novedades" id="novedades" value="novedades" />
                     <label class="inline" for="novedades">Ofertas y novedades</label>
                 </div>
                 <br />
 
-                <!-- CAMBIADO: botón de type="button" -->
                 <button type="button" id="registerButton">REGISTRATE</button>
             </form>
         </div>
@@ -112,7 +111,7 @@
                 <br />
 
                 <div class="campo">
-                    <input type="text" placeholder="Confirm password:" id="loginConfirmPassword" name="loginConfirmPassword" autocomplete="off" />
+                    <input type="password" placeholder="Confirm password:" id="loginConfirmPassword" name="loginConfirmPassword" autocomplete="off" />
                     <div id="confirmPasswordError" class="error-confirm-password"></div>
                 </div>
                 <br />
@@ -120,6 +119,9 @@
                 <input type="submit" value="Iniciar Sesión" />
             </form>
         </div>
+
+
+
     </div>
 
     <script src="script.js"></script>
