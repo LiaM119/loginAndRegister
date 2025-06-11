@@ -114,11 +114,10 @@ select option {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  flex-direction: row-reverse;
+  position: relative;
   width: 100%;
-  gap: 400px;
+  height: 100vh; /* o lo que necesites para altura total */
+  overflow: hidden;
 }
 
 .wrapper {
@@ -133,21 +132,59 @@ select option {
   flex-wrap: wrap; /* Opcional para responsividad */
 }
 
-.container-register,
-.container-login {
-  display: none;
+#container-register,
+#loginPanel {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
   width: auto;
-  position: relative;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 1s ease;
+}
+
+#container-register{
+  transform: translate(70%, -50%);
+}
+
+#loginPanel{
+  transform: translate(-150%, -50%);
+}
+
+#container-login{
+  transform: translate(-170%, -50%);
+}
+
+#registerPanel{
+  transform: translate(70%, -50%);
+}
+
+#registerPanel,
+#container-login {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  width: auto;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 1s ease;
+}
+
+.loginPanel, .registerPanel, .registerFormm, .loginFormm{
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .loginPanel, .registerPanel{
   background-color: rgba(0, 0, 0, 0);
-  padding: 30px;
+  padding: 0px;
   border-radius: 10px;
   color: white;
   max-width: 400px;
   margin: 20px auto;
   font-size: x-large;
+  position: relative;
+  transition: transform 1s ease, opacity 1s ease;
 }
 
 
@@ -169,6 +206,71 @@ select option {
   gap: 60px;
 }
 
-.hidden {
-  display: none !important;
+.activo {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.inactivo {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Izquierda */
+.move-left-login {
+  transform: translateX(-200%);
+}
+
+.move-left-loginPanel {
+  transform: translateX(-50%);
+}
+
+.move-left-register {
+  transform: translateX(-50%);
+}
+
+.move-left-registerPanel {
+  transform: translateX(-50%);
+}
+
+/* Derecha */
+.move-right-loginPanel {
+  transform: translateX(50%);
+}
+
+.move-right-login {
+  transform: translateX(200%);
+}
+
+.move-right-register {
+  transform: translateX(50%);
+}
+
+.move-right-registerPanel {
+  transform: translateX(160%);
+}
+
+/* Asegura que los paneles inactivos no interfieran */
+#container-register.inactivo,
+#loginPanel.inactivo,
+#registerPanel.inactivo,
+#container-login.inactivo {
+  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  z-index: 0 !important;
+}
+
+/* Asegura que solo el panel activo sea clickeable y visible */
+#container-register.activo,
+#loginPanel.activo,
+#registerPanel.activo,
+#container-login.activo {
+  pointer-events: auto;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 10 !important;
 }

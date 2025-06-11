@@ -229,27 +229,77 @@ document.addEventListener('DOMContentLoaded', function() {
     const registerFormm = document.getElementById("container-register");
     const loginFormm = document.getElementById("container-login");
 
-    btnRegister.addEventListener("click", () => {
-    // Oculta panel de bienvenida de registro y muestra el formulario
-    registerPanel.classList.add("hidden");
-    registerFormm.classList.remove("hidden");
-    registerFormm.classList.add("visible");
+    function limpiarTodo() {
+    // Remueve clases de movimiento
+    loginFormm.classList.remove("move-left-login", "move-right-login");
+    registerFormm.classList.remove("move-left-register", "move-right-register");
+    loginPanel.classList.remove("move-left-loginPanel", "move-right-loginPanel");
+    registerPanel.classList.remove("move-left-registerPanel", "move-right-registerPanel");
 
-    // Asegura que el panel de login esté visible y formulario de login oculto
-    loginPanel.classList.remove("hidden");
-    loginFormm.classList.add("hidden");
-    loginFormm.classList.remove("visible");
+    // Remueve clases de visibilidad
+    [registerPanel, loginPanel, registerFormm, loginFormm].forEach(el => {
+    el.classList.remove("activo", "inactivo");
     });
 
-    btnLogin.addEventListener("click", () => {
-    // Oculta panel de bienvenida de login y muestra el formulario
-    loginPanel.classList.add("hidden");
-    loginFormm.classList.remove("hidden");
-    loginFormm.classList.add("visible");
+    // Forzar reflow
+    void loginFormm.offsetWidth;
+    void registerFormm.offsetWidth;
+    }
 
-    // Asegura que el panel de registro esté visible y formulario de registro oculto
-    registerPanel.classList.remove("hidden");
-    registerFormm.classList.add("hidden");
-    registerFormm.classList.remove("visible");
-});
+    btnLogin.addEventListener("click", () => {
+        limpiarTodo();
+    // Oculta panel de bienvenida de login y muestra el formulario
+    loginPanel.classList.add("inactivo");
+    loginFormm.classList.remove("inactivo");
+    loginFormm.classList.add("activo");
+
+    // Movimiento
+    loginFormm.classList.add("move-left-login");
+    loginPanel.classList.remove("move-left-loginPanel");
+
+    // Mostrar panel de bienvenida de registro
+    registerPanel.classList.remove("inactivo"); // <--- faltaba esto
+    registerPanel.classList.add("activo");      // opcional, si manejas clase 'activo'
+
+    // Asegura que el formulario de registro esté oculto
+    registerFormm.classList.add("inactivo");
+    registerFormm.classList.remove("activo");
+
+    // Movimiento
+    registerPanel.classList.remove("move-right-registerPanel"); // <--- clave
+    registerPanel.classList.add("move-left-registerPanel");     // <--- nuevo movimiento de entrada
+    registerFormm.classList.remove("move-right-register");
+    });
+
+    btnRegister.addEventListener("click", () => {
+        limpiarTodo();
+    // Oculta panel de bienvenida de registro y muestra el formulario
+    registerPanel.classList.add("inactivo");
+    registerPanel.classList.remove("activo"); // <--- FALTA ESTO
+    registerFormm.classList.remove("inactivo");
+    registerFormm.classList.add("activo");
+
+    // Movimiento
+    registerFormm.classList.add("move-left-register");
+    registerPanel.classList.remove("move-left-registerPanel");
+
+    // Mostrar panel de bienvenida de login
+    loginPanel.classList.remove("inactivo");
+    loginPanel.classList.add("activo");
+
+    // Asegura que el formulario de login esté oculto
+    loginFormm.classList.add("inactivo");
+    loginFormm.classList.remove("activo");
+
+    // Movimiento
+    loginPanel.classList.remove("move-right-loginPanel");
+    loginPanel.classList.add("move-left-loginPanel");
+    loginFormm.classList.remove("move-right-login");
+    });
+    
+    //registerPanel.classList.remove("show");
+    //setTimeout(() => {
+    //registerPanel.style.visibility = "hidden";
+    //registerPanel.style.pointerEvents = "none";
+    //}, 1000);
 });
