@@ -123,18 +123,24 @@ select option {
 
 .wrapper {
   display: flex;
-  flex-direction: row;
-  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+  flex-wrap: wrap; /* Opcional para responsividad */
 }
 
 .container-register,
 .container-login {
-  width: auto;
   display: none;
+  width: auto;
   position: relative;
 }
 
-#loginPanel, #registerPanel{
+.loginPanel, .registerPanel{
   background-color: rgba(0, 0, 0, 0);
   padding: 30px;
   border-radius: 10px;
@@ -142,4 +148,27 @@ select option {
   max-width: 400px;
   margin: 20px auto;
   font-size: x-large;
+}
+
+
+#panelActiveRegister,
+#panelActiveLogin {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 2px 2px 20px black;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.hidden {
+  display: none !important;
 }

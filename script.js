@@ -226,26 +226,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const registerPanel = document.getElementById("registerPanel");
     const loginPanel = document.getElementById("loginPanel");
 
-    const registerFormm = document.querySelector(".container-register");
-    const loginFormm = document.querySelector(".container-login");
+    const registerFormm = document.getElementById("container-register");
+    const loginFormm = document.getElementById("container-login");
 
     btnRegister.addEventListener("click", () => {
-    // Ocultar el panel de registro y mostrar el formulario de registro
-    registerPanel.style.display = "none";
-    registerFormm.style.display = "block";
+    // Oculta panel de bienvenida de registro y muestra el formulario
+    registerPanel.classList.add("hidden");
+    registerFormm.classList.remove("hidden");
+    registerFormm.classList.add("visible");
 
-    // Mostrar el panel de login (por si estaba oculto) y ocultar formulario de login
-    loginPanel.style.display = "block";
-    loginFormm.style.display = "none";
+    // Asegura que el panel de login esté visible y formulario de login oculto
+    loginPanel.classList.remove("hidden");
+    loginFormm.classList.add("hidden");
+    loginFormm.classList.remove("visible");
     });
 
     btnLogin.addEventListener("click", () => {
-    // Ocultar el panel de login y mostrar el formulario de login
-    loginPanel.style.display = "none";
-    loginFormm.style.display = "block";
+    // Oculta panel de bienvenida de login y muestra el formulario
+    loginPanel.classList.add("hidden");
+    loginFormm.classList.remove("hidden");
+    loginFormm.classList.add("visible");
 
-    // Mostrar el panel de registro (por si estaba oculto) y ocultar formulario de registro
-    registerPanel.style.display = "block";
-    registerFormm.style.display = "none";
-    });
+    // Asegura que el panel de registro esté visible y formulario de registro oculto
+    registerPanel.classList.remove("hidden");
+    registerFormm.classList.add("hidden");
+    registerFormm.classList.remove("visible");
+});
 });
