@@ -1,7 +1,7 @@
 Este proyecto es una interfaz moderna de registro e inicio de sesión desarrollada con HTML, CSS y JavaScript puro, enfocada en la experiencia de usuario (UX) y la validación de formularios sin dependencias externas.
 
 🧑‍💻 Sobre mí
-Mi nombre es Liam Romero, soy desarrollador frontend y estudiante full stack con un fuerte enfoque en interfaces interactivas, diseño accesible y animaciones web. Este proyecto fue creado como una muestra práctica de mis conocimientos en animaciones, lógica de validación, manipulación del DOM y diseño responsivo, buscando combinar funcionalidad sólida con una experiencia visual atractiva.
+Mi nombre es Liam Romero, soy estudiante de Desarrollo Web Full Stack con un fuerte enfoque en interfaces interactivas, diseño accesible y animaciones web. Este proyecto fue creado como una muestra práctica de mis conocimientos en animaciones, lógica de validación, manipulación del DOM y diseño responsivo, buscando combinar funcionalidad sólida con una experiencia visual atractiva.
 
 🚀 Funcionalidades
 🎨 Interfaz visual animada con transiciones suaves entre login y registro.
