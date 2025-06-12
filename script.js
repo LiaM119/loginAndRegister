@@ -297,9 +297,4 @@ document.addEventListener('DOMContentLoaded', function() {
     loginFormm.classList.remove("move-right-login");
     });
     
-    //registerPanel.classList.remove("show");
-    //setTimeout(() => {
-    //registerPanel.style.visibility = "hidden";
-    //registerPanel.style.pointerEvents = "none";
-    //}, 1000);
 });
