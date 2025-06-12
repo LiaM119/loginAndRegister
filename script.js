@@ -1,5 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+    document.getElementById('loginPanel').classList.add('loginAnimation');
+    }, 50);
 
+    setTimeout(() => {
+    document.getElementById('container-register').classList.add('registerFormAnimation');
+    }, 50);
+
+        setTimeout(() => {
+        document.body.classList.remove('preload');
+    }, 50);
+  
     // ------------ REGISTER ------------
 
     document.getElementById('registerButton').addEventListener('click', function() {

@@ -149,7 +149,7 @@ select option {
 .container {
   position: relative;
   width: 100%;
-  height: 100vh; /* o lo que necesites para altura total */
+  height: 100vh; 
   overflow: hidden;
 }
 
@@ -162,7 +162,7 @@ select option {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
-  flex-wrap: wrap; /* Opcional para responsividad */
+  flex-wrap: wrap; 
 }
 
 #container-register,
@@ -181,17 +181,17 @@ select option {
 }
 
 #loginPanel{
-  transform: translate(-150%, -50%);
   color: white;
   text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 1s ease;
 }
 
 #container-login{
-  transform: translate(-180%, -50%);
+  transform: translate(-150%, -50%);
 }
 
 #registerPanel{
-  transform: translate(60%, -50%);
+  transform: translate(50%, -50%);
   color: white;
   text-align: center;
 }
@@ -208,23 +208,6 @@ select option {
   transition: transform 0.5s ease, opacity 0.5s ease, visibility 1s ease;
 }
 
-.loginPanel, .registerPanel, .registerFormm, .loginFormm{
-  transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-.loginPanel, .registerPanel{
-  background-color: rgba(0, 0, 0, 0);
-  padding: 0px;
-  border-radius: 10px;
-  color: white;
-  max-width: 400px;
-  margin: 20px auto;
-  font-size: x-large;
-  position: relative;
-  transition: transform 1s ease, opacity 1s ease;
-}
-
-
 #panelActiveRegister,
 #panelActiveLogin {
   display: block;
@@ -235,6 +218,7 @@ select option {
   max-width: 400px;
   text-align: center;
   box-shadow: 2px 2px 20px black;
+  transition: transform 0.5s ease, opacity 0.5s ease, visibility 1s ease;
 }
 
 .form-wrapper {
@@ -262,9 +246,8 @@ select option {
 }
 
 .move-left-loginPanel {
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* Leve cambio para forzar la animación */
 }
-
 .move-left-register {
   transform: translateX(-50%);
 }
@@ -290,7 +273,7 @@ select option {
   transform: translateX(160%);
 }
 
-/* Asegura que los paneles inactivos no interfieran */
+
 #container-register.inactivo,
 #loginPanel.inactivo,
 #registerPanel.inactivo,
@@ -301,7 +284,6 @@ select option {
   z-index: 0 !important;
 }
 
-/* Asegura que solo el panel activo sea clickeable y visible */
 #container-register.activo,
 #loginPanel.activo,
 #registerPanel.activo,
@@ -314,4 +296,11 @@ select option {
 
 .campo.checkbox{
   text-align: center;
+}
+
+body.preload * {
+  visibility: hidden !important;
+}
+body.preload {
+  overflow: hidden;
 }
