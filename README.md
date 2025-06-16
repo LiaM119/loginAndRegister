@@ -50,7 +50,6 @@ Validaciones más avanzadas (expresiones regulares por país, por ejemplo).
 
 
 🤝 Contacto
-Podés contactarme para colaboraciones, oportunidades o preguntas técnicas:
 
 Email: [liamnahuelromero@gmail.com]
 

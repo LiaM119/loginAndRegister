@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mostrarError(errorEdad, '¡Ingrese una edad válida!');
         validacionCorrecta = false;
     } else if (Number(edad.value.trim()) < 18) {
-        mostrarError(errorEdad, '¡Debes ser mayor a 18 años para registrarte!');
+        mostrarError(errorEdad, '¡Debes ser mayor o igual a 18 años para registrarte!');
         validacionCorrecta = false;
     } else {
         ocultarError(errorEdad);
