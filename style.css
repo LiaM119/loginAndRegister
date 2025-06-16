@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 
+/* ------------ ANIMACIONES ------------ */
 @keyframes aparecerSuave {
   0% {
     opacity: 0;
@@ -13,7 +14,7 @@
     transform: translate(-150%, -50%);
   }
 }
- 
+
 .loginAnimation {
   opacity: 0;
   animation: aparecerSuave 1.2s ease-out forwards;
@@ -27,12 +28,13 @@
     opacity: 1;
   }
 }
- 
+
 .registerFormAnimation {
   opacity: 0;
   animation: opacidadSuave 1s ease-out forwards;
 }
 
+/* ------------ BODY Y FUENTE ------------ */
 body {
   font-family: 'Nunito Sans', sans-serif;
   background-image: url(assets/paisajefondo.jpg);
@@ -50,6 +52,7 @@ body {
   font-size: 1.1rem;
 }
 
+/* ------------ FORMULARIOS ------------ */
 form {
   background-color: rgba(44, 41, 38, 0.50);
   padding: 25px;
@@ -107,6 +110,7 @@ button:hover {
   background-color: rgba(21, 24, 65, 0.356);
 }
 
+/* ------------ ERRORES ------------ */
 .error {
   color: red;
   font-size: 12px;
@@ -125,6 +129,7 @@ button:hover {
   display: none;
 }
 
+/* ------------ TITULOS Y CAMPOS ------------ */
 h2 {
   text-align: center;
 }
@@ -146,6 +151,7 @@ select option {
   color: rgb(167, 167, 167);
 }
 
+/* ------------ CONTENEDORES PRINCIPALES ------------ */
 .container {
   position: relative;
   width: 100%;
@@ -165,6 +171,7 @@ select option {
   flex-wrap: wrap; 
 }
 
+/* ------------ PANELES Y FORMULARIOS ------------ */
 #container-register,
 #loginPanel {
   top: 50%;
@@ -176,21 +183,21 @@ select option {
   transition: transform 0.5s ease, opacity 0.5s ease, visibility 1s ease;
 }
 
-#container-register{
+#container-register {
   transform: translate(85%, -50%);
 }
 
-#loginPanel{
+#loginPanel {
   color: white;
   text-align: center;
   transition: transform 0.5s ease, opacity 0.5s ease, visibility 1s ease;
 }
 
-#container-login{
+#container-login {
   transform: translate(-170%, -50%);
 }
 
-#registerPanel{
+#registerPanel {
   transform: translate(50%, -50%);
   color: white;
   text-align: center;
@@ -227,6 +234,7 @@ select option {
   gap: 60px;
 }
 
+/* ------------ ESTADOS DE VISIBILIDAD ------------ */
 .activo {
   opacity: 1;
   pointer-events: auto;
@@ -240,14 +248,16 @@ select option {
   transition: opacity 0.3s ease;
 }
 
+/* ------------ ANIMACIONES DE MOVIMIENTO ------------ */
 /* Izquierda */
 .move-left-login {
   transform: translateX(-200%);
 }
 
 .move-left-loginPanel {
-  transform: translateX(-50%); /* Leve cambio para forzar la animación */
+  transform: translateX(-50%);
 }
+
 .move-left-register {
   transform: translateX(-50%);
 }
@@ -273,7 +283,7 @@ select option {
   transform: translateX(160%);
 }
 
-
+/* ------------ ESTADOS DE LOS CONTENEDORES ------------ */
 #container-register.inactivo,
 #loginPanel.inactivo,
 #registerPanel.inactivo,
@@ -294,10 +304,11 @@ select option {
   z-index: 10 !important;
 }
 
-.campo.checkbox{
+.campo.checkbox {
   text-align: center;
 }
 
+/* ------------ PRELOAD ------------ */
 body.preload * {
   visibility: hidden !important;
 }

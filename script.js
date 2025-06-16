@@ -264,9 +264,10 @@ document.addEventListener('DOMContentLoaded', function() {
     loginFormm.classList.remove("inactivo");
     loginFormm.classList.add("activo");
 
-    // Movimiento
-    loginFormm.classList.add("move-left-login");
-    loginPanel.classList.remove("move-left-loginPanel");
+    // --- Animación panel login ---
+    loginPanel.classList.remove("loginAnimation"); // Quitar para reiniciar
+    void loginPanel.offsetWidth; // Forzar reflow
+    loginPanel.classList.add("loginAnimation"); // Agregar animación
 
     // Mostrar panel de bienvenida de registro
     registerPanel.classList.remove("inactivo"); // <--- faltaba esto
@@ -297,6 +298,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mostrar panel de bienvenida de login
     loginPanel.classList.remove("inactivo");
     loginPanel.classList.add("activo");
+
+    // --- Animación panel login ---
+    loginPanel.classList.remove("loginAnimation"); // Quitar para reiniciar
+    void loginPanel.offsetWidth; // Forzar reflow
+    loginPanel.classList.add("loginAnimation"); // Agregar animación
 
     // Asegura que el formulario de login esté oculto
     loginFormm.classList.add("inactivo");
